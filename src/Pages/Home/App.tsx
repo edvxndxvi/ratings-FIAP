@@ -4,7 +4,7 @@ import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
 import AvaliarButton from '../../Componentes/AvaliarButton'
 import AvalicaoDestaque from '../../Componentes/AvaliacaoDestaque'
-import Classificacao from '../../Componentes/Classificacao'
+import NotaUser from '../../Componentes/NotaUser'
 
 function App() {
   return (
@@ -25,8 +25,13 @@ function App() {
           </div>
           <div className="avaliacao">
             <div className="header-avaliacao">
-              <AvalicaoDestaque/>
-              <Classificacao name="10"/>
+              <div className="dado-avaliacao">
+                <AvalicaoDestaque/>
+                <NotaUser name="10"/>
+              </div>
+              <div className="dado-post-avaliacao">
+                
+              </div>
             </div>
           </div>
         </div>

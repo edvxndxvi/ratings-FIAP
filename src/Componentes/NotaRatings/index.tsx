@@ -2,7 +2,7 @@ import "./index.css"
 import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
-function AvaliacaoRatings(props: { name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }){
+function NotaRatings(props: { name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }){
     return(
         <div className="nota-avaliacao">
             <img src={estrela_preenchida} alt="Estrela Preenchida Icon" />
@@ -11,4 +11,4 @@ function AvaliacaoRatings(props: { name: string | number | boolean | ReactElemen
     )
 }
 
-export default AvaliacaoRatings;
+export default NotaRatings;

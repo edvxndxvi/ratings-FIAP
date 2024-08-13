@@ -2,7 +2,7 @@ import "./index.css"
 import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal } from "react";
 
-function Classificacao(props: { name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }){
+function NotaUser(props: { name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | null | undefined; }){
     return(
         <div className="classificacao">
             <img src={estrela_preenchida} alt="Estrela Preenchida Icon" />
@@ -11,4 +11,4 @@ function Classificacao(props: { name: string | number | boolean | ReactElement<a
     )
 }
 
-export default Classificacao;
+export default NotaUser;

@@ -1,5 +1,5 @@
 import "./index.css"
-import AvaliacaoRatings from "../AvaliacaoRatings"
+import NotaRatings from "../NotaRatings"
 import estrela_contornada from "../../assets/svg/estrela-contornada.svg"
 import capa from "../../assets/images/capa-gow.png"
 import gameplay from "../../assets/images/gameplay-gow.png"
@@ -12,7 +12,7 @@ function Main(){
                     <h1 className="branco">GOD OF WAR: RAGNAROK</h1>
                     <div className="avaliacao-ratings">
                         <h2 className="branco">AVALIAÇÃO DA RATINGS</h2>
-                        <AvaliacaoRatings name="9.6"/>
+                        <NotaRatings name="9.6"/>
                     </div>
                     <div className="avaliacao-user">
                         <h2 className="branco">SUA AVALIAÇÃO</h2>
