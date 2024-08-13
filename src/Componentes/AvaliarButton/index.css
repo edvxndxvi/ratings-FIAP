@@ -1,9 +1,9 @@
-a{
+.avaliarButton{
     display: flex;
     gap: 6px;
     text-decoration: none;
     transition: .3s;
 }
-a:hover{
+.avaliarButton:hover{
     color: var(--rosa);
 }

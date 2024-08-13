@@ -17,3 +17,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.avaliacao{
+  background-color: var(--roxo-escuro);
+  padding: 32px;
+  padding-bottom: 6px;
+  border-radius: 8px;
+}

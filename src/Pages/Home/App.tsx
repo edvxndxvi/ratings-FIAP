@@ -4,6 +4,7 @@ import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
 import AvaliarButton from '../../Componentes/AvaliarButton'
 import AvalicaoDestaque from '../../Componentes/AvaliacaoDestaque'
+import Classificacao from '../../Componentes/Classificacao'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <div className="avaliacao">
             <div className="header-avaliacao">
               <AvalicaoDestaque/>
+              <Classificacao name="10"/>
             </div>
           </div>
         </div>

@@ -1,0 +1,14 @@
+.classificacao{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.classificacao img{
+    width: 16px;
+}
+.classificacao p{
+    font-family: "Krona One", sans-serif;
+}
+.classificacao p span{
+    display: inline-block;
+}
