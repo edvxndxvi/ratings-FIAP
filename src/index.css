@@ -20,6 +20,15 @@ html{
   scroll-behavior: smooth;
 }
 
+/* PERSONALIZANDO SCROLL */
+::-webkit-scrollbar{
+  width: 0.9vw;
+  background: #171717;
+}
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(var(--vermelho), var(--rosa));
+  border-radius: 6px;
+}
 /* RESETANDO MARGINS E PADDINGS */
 *{
   margin: 0;
