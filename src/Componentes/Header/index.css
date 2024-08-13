@@ -1,0 +1,51 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 20px;
+}
+.menu-hamburguer a, .pesquisar{   
+    display: flex;
+    align-items: center;
+}
+.menu-hamburguer a{
+    gap: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: .3s;
+}
+.menu-hamburguer a:hover{
+   color: var(--cinza);
+}
+.pesquisar{
+    padding: 16px 32px;
+    max-width: 600px;
+    width: 100%;
+    background-color: var(--cinza-escuro);
+    border-radius: 8px;
+    gap: 32px;
+}
+.pesquisar img{
+    cursor: pointer;
+}
+.pesquisar input{
+    background: transparent;
+    outline: none;
+    border: none;
+    font-family: "Karla", sans-serif;
+    font-size: 20px;
+    color: var(--cinza);
+}
+button{
+    font-family: "Krona One", sans-serif;
+    color: var(--branco);
+    background-color: var(--rosa);
+    border: none;
+    padding: 16px 64px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .3s;
+}
+button:hover{
+    background-color: var(--vermelho);
+}
