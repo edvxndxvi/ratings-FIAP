@@ -15,6 +15,10 @@
   --vermelho: #FF003F;
   --rosa: #D5224E;
 }
+/* DEIXANDO O SCROLL SUAVE */
+html{
+  scroll-behavior: smooth;
+}
 
 /* RESETANDO MARGINS E PADDINGS */
 *{
