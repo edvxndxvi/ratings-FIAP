@@ -3,6 +3,7 @@ import Header from '../../Componentes/Header'
 import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
 import AvaliarButton from '../../Componentes/AvaliarButton'
+import AvalicaoDestaque from '../../Componentes/AvaliacaoDestaque'
 
 function App() {
   return (
@@ -20,6 +21,11 @@ function App() {
           <div className="dropdown-avaliacoes">
             <Dropdown name="AVALIAÇÕES DE USUÁRIOS"/>
             <AvaliarButton/>
+          </div>
+          <div className="avaliacao">
+            <div className="header-avaliacao">
+              <AvalicaoDestaque/>
+            </div>
           </div>
         </div>
       </div>

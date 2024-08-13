@@ -1,0 +1,9 @@
+.avaliacao-destaque{
+    background-color: var(--rosa);
+    padding: 6px 32px;
+    max-width: 341px;
+    border-radius: 8px 4px 24px 8px;
+}
+.avaliacao-destaque p{
+    font-family: "Krona One", sans-serif;
+}
