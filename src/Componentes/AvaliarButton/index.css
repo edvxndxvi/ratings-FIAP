@@ -1,0 +1,9 @@
+a{
+    display: flex;
+    gap: 6px;
+    text-decoration: none;
+    transition: .3s;
+}
+a:hover{
+    color: var(--rosa);
+}
