@@ -1,18 +1,24 @@
 import "./index.css"
-import NotaRatings from "../NotaRatings"
+import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import estrela_contornada from "../../assets/svg/estrela-contornada.svg"
 import capa from "../../assets/images/capa-gow.png"
 import gameplay from "../../assets/images/gameplay-gow.png"
 
-function Main(){
+function Main(props:{
+    titulo: string,
+    nota: number,
+}){
     return(
         <main>
             <div className="conteudo-main">
                 <div className="titulo-main">
-                    <h1 className="branco">GOD OF WAR: RAGNAROK</h1>
+                    <h1 className="branco">{props.titulo}</h1>
                     <div className="avaliacao-ratings">
                         <h2 className="branco">AVALIAÇÃO DA RATINGS</h2>
-                        <NotaRatings name="9.6"/>
+                        <div className="nota-avaliacao">
+                            <img src={estrela_preenchida} alt="Estrela Preenchida Icon" />
+                            <p className="branco">{props.nota}<span className="cinza">/10</span></p>
+                        </div>
                     </div>
                     <div className="avaliacao-user">
                         <h2 className="branco">SUA AVALIAÇÃO</h2>

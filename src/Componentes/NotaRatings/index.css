@@ -1,8 +1,0 @@
-.nota-avaliacao{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.nota-avaliacao span{
-    display: inline-block;
-}

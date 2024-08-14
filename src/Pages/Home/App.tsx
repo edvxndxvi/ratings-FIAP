@@ -2,14 +2,16 @@ import './App.css'
 import Header from '../../Componentes/Header'
 import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
-import AvaliarButton from '../../Componentes/AvaliarButton'
+import mais from "../../assets/svg/mais.svg"
 import PostAvaliacao from '../../Componentes/PostAvaliacao/index';
 
 function App() {
   return (
     <>
       <Header/>
-      <Main/>
+      <Main
+        titulo="GOD OF WAR: RAGNAROK"
+        nota={9.6}/>
       <div className="enredo">
         <div className="container">
           <Dropdown name="ENREDO"/>
@@ -20,7 +22,10 @@ function App() {
         <div className="container">
           <div className="dropdown-avaliacoes">
             <Dropdown name="AVALIAÇÕES DE USUÁRIOS"/>
-            <AvaliarButton/>
+            <a href="#" className="vermelho avaliarButton">
+            <img src={mais} alt="Mais Icon" />
+            Avaliar
+            </a>
           </div>
           <PostAvaliacao 
             notaUser={10}
