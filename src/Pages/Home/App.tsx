@@ -4,11 +4,13 @@ import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
 import mais from "../../assets/svg/mais.svg"
 import PostAvaliacao from '../../Componentes/PostAvaliacao/index';
+import Footer from '../../Componentes/Footer'
 
 function App() {
   return (
     <>
       <Header/>
+
       <Main
         titulo="GOD OF WAR: RAGNAROK"
         nota={9.6}/>
@@ -18,6 +20,7 @@ function App() {
           <p className='branco'>Kratos and his son Atreus face the oncoming Norse apocalypse, Ragnarok.</p>
         </div>
       </div>
+
       <div className="avaliacoes">
         <div className="container">
           <div className="dropdown-avaliacoes">
@@ -40,6 +43,8 @@ function App() {
             />
         </div>
       </div>
+
+      <Footer/>
     </>
   )
 }
