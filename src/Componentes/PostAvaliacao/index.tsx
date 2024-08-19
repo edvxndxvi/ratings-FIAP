@@ -1,16 +1,17 @@
-import "./index.css"
+import "./index.css";
 import AvalicaoDestaque from "../AvaliacaoDestaque";
-import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
-import like from "../../assets/svg/like.svg"
-import dislike from "../../assets/svg/dislike.svg"
-import opcoes from "../../assets/svg/3-pontinhos.svg"
-
+import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg";
+import like from "../../assets/svg/like.svg";
+import dislike from "../../assets/svg/dislike.svg";
+import opcoes from "../../assets/svg/3-pontinhos.svg";
+import setaBaixo from "../../assets/svg/seta-baixo.svg";
 
 function PostAvaliacao(props: {
     notaUser: number;
     user: string;
     data: string;
     tituloAvaliacao: string;
+    temSpoiler: boolean,
     textoAvaliacao: string;
     like: number;
     dislike: number;
@@ -32,7 +33,14 @@ function PostAvaliacao(props: {
             </div>
             <div className="texto-avaliacao">
                 <h4 className="branco">{props.tituloAvaliacao}</h4>
-                <p className="branco" dangerouslySetInnerHTML={{ __html: props.textoAvaliacao }} />
+                {props.temSpoiler ? (
+                    <div className="spoilerDropdown">
+                        <p className="vermelho">Warning: Spoilers!</p>
+                        <img src={setaBaixo} alt="Seta apontando para baixo" />
+                    </div>
+                ) : (
+                    <p className="branco" dangerouslySetInnerHTML={{ __html: props.textoAvaliacao }} />
+                )}
             </div>
             <div className="interacao-avaliacao">
                 <div className="reacao-avaliacao">

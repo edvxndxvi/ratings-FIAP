@@ -3,6 +3,7 @@
     padding: 32px;
     padding-bottom: 6px;
     border-radius: 8px;
+    margin-bottom: 32px;
 }
 .header-avaliacao{
     display: flex;
@@ -52,6 +53,16 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 12px;
+}
+.spoilerDropdown{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--azul-escuro);
+    border-radius: 8px;
+}
+.spoilerDropdown img{
+    cursor: pointer;
 }
 .interacao-avaliacao{
     padding: 10px 32px;
