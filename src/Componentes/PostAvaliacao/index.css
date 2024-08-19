@@ -57,6 +57,7 @@
 .spoilerDropdown{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
     background-color: var(--azul-escuro);
     border-radius: 8px;

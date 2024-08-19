@@ -38,7 +38,7 @@ nav{
     font-size: 20px;
     color: var(--cinza);
 }
-button{
+nav button{
     font-family: "Krona One", sans-serif;
     color: var(--branco);
     background-color: var(--rosa);
@@ -48,6 +48,26 @@ button{
     cursor: pointer;
     transition: .3s;
 }
-button:hover{
+nav button:hover{
     background-color: var(--vermelho);
+}
+
+
+@media (max-width: 1150px){
+    .pesquisar{
+        max-width: 400px;
+    }
+}
+@media (max-width: 950px){
+    .pesquisar{
+        max-width: 300px;
+    }
+}
+@media (max-width: 850px){
+    nav button{
+        display: none;
+    }
+    .pesquisar{
+        display: none;
+    }
 }

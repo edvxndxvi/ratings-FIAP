@@ -31,15 +31,15 @@ function PostAvaliacao(props: {
                     <p className="cinza">{props.data}</p>
                 </div>
             </div>
-            <div className="texto-avaliacao">
-                <h4 className="branco">{props.tituloAvaliacao}</h4>
+            <div className="texto-avaliacao branco">
+                <h4>{props.tituloAvaliacao}</h4>
                 {props.temSpoiler ? (
                     <div className="spoilerDropdown">
                         <p className="vermelho">Warning: Spoilers!</p>
                         <img src={setaBaixo} alt="Seta apontando para baixo" />
                     </div>
                 ) : (
-                    <p className="branco" dangerouslySetInnerHTML={{ __html: props.textoAvaliacao }} />
+                    <p dangerouslySetInnerHTML={{ __html: props.textoAvaliacao }} />
                 )}
             </div>
             <div className="interacao-avaliacao">
