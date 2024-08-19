@@ -28,9 +28,6 @@
 .classificacao p{
     font-family: "Krona One", sans-serif;
 }
-.classificacao p span{
-    display: inline-block;
-}
 .dado-post-avaliacao{
     font-family: "Karla", sans-serif;
     display: flex;
@@ -87,3 +84,11 @@
     align-items: center;
     gap: 12px;
 }
+@media (max-width: 550px){
+    .dado-post-avaliacao{
+        padding-inline: 0px;
+    }
+    .dado-avaliacao{
+      gap: 32px;
+    }
+  }

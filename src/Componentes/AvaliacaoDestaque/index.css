@@ -7,3 +7,11 @@
 .avaliacao-destaque p{
     font-family: "Krona One", sans-serif;
 }
+@media (max-width: 550px){
+    .avaliacao-destaque{
+        padding: 6px 16px;
+    }
+    .avaliacao-destaque p{
+        font-size: 14px;
+    }
+  }
