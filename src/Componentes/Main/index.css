@@ -19,6 +19,11 @@ main{
 .titulo-main h2{
     font-size: 16px;
     font-weight: 400;
+    text-align: center;
+}
+.notas{
+    display: flex;
+    gap: 64px;
 }
 .avaliacao-ratings,
 .avaliacao-user{
@@ -50,4 +55,32 @@ main{
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 6px;
+}
+
+@media (max-width: 1100px){
+    .notas{
+        gap: 32px;
+    }
+}
+@media (max-width: 1050px){
+    .titulo-main h1{
+        font-size: 26px;
+    }
+}
+@media (max-width: 950px){
+    .titulo-main{
+       gap: 20px;
+    }
+    .notas{
+        gap: 64px;
+    }
+}
+@media (max-width: 850px){
+    .titulo-main{
+       flex-direction: column;
+       gap: 32px;
+    }
+    .imagens-main{
+        grid-template-columns: 1fr;
+    }
 }
