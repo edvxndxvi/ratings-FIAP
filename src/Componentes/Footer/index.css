@@ -32,3 +32,15 @@ footer{
 .navegacao-footer ul a:hover{
     color: var(--cinza);
 }
+
+@media (max-width: 850px){
+    .conteudo-footer{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .navegacao-footer{
+        width: 100%;
+        align-self: flex-start;
+       justify-content: space-between;
+    }
+}
