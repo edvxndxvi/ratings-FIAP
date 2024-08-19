@@ -1,6 +1,5 @@
 main{
     width: 100%; 
-    background: linear-gradient(rgba(14, 16, 21, 0.90), rgba(14, 16, 21, 0.90)), url(../../assets/images/main-background.png) center center / cover no-repeat scroll;
 }
 .conteudo-main{
     max-width: 1280px;

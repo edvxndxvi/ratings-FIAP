@@ -1,15 +1,18 @@
 import "./index.css"
 import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import estrela_contornada from "../../assets/svg/estrela-contornada.svg"
-import capa from "../../assets/images/capa-gow.png"
-import gameplay from "../../assets/images/gameplay-gow.png"
 
 function Main(props:{
     titulo: string,
     nota: number,
+    imagemCapa: string,
+    imagemGameplay: string,
+    imagemFundo: string
 }){
     return(
-        <main>
+        <main style={{
+            background: `linear-gradient(rgba(14, 16, 21, 0.90), rgba(14, 16, 21, 0.90)), url(${props.imagemFundo}) center center / cover no-repeat`,
+            }}>
             <div className="conteudo-main">
                 <div className="titulo-main">
                     <h1 className="branco">{props.titulo}</h1>
@@ -30,10 +33,10 @@ function Main(props:{
                 </div>
                 <div className="imagens-main">
                     <div className="capa">
-                        <img src={capa} alt="Capa God Of War: Ragnarok" />
+                        <img src={props.imagemCapa} alt="Capa God Of War: Ragnarok" />
                     </div>
                    <div className="gameplay">
-                        <img src={gameplay} alt="Gameplay God Of War: Ragnarok" />
+                        <img src={props.imagemFundo} alt="Gameplay God Of War: Ragnarok" />
                    </div>
                 </div>
             </div>

@@ -4,7 +4,10 @@ import Main from '../../Componentes/Main'
 import Dropdown from '../../Componentes/Dropdwon'
 import mais from "../../assets/svg/mais.svg"
 import PostAvaliacao from '../../Componentes/PostAvaliacao/index';
-import Footer from '../../Componentes/Footer'
+import Footer from '../../Componentes/Footer';
+import capa from '../../assets/images/capa-gow.png';
+import gameplay from '../../assets/images/gameplay-gow.png';
+import fundo from '../../assets/images/main-background.png';
 
 function App() {
   return (
@@ -13,7 +16,10 @@ function App() {
 
       <Main
         titulo="GOD OF WAR: RAGNAROK"
-        nota={9.6}/>
+        nota={9.6}
+        imagemCapa={capa}
+        imagemGameplay={gameplay}
+        imagemFundo={fundo}/>
       <div className="enredo">
         <div className="container">
           <Dropdown name="ENREDO"/>
