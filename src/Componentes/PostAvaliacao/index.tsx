@@ -78,11 +78,17 @@ function PostAvaliacao(props: {
             <div className="interacao-avaliacao">
                 <div className="reacao-avaliacao">
                     <div className="like-avaliacao" onClick={cliqueBotaoLike}>
-                        <img src={like} alt="Like Icon" />
+                        <img 
+                            src={like} 
+                            alt="Like Icon" 
+                            style={{ filter: curtido ? "invert(28%) sepia(100%) saturate(7483%) hue-rotate(328deg) brightness(96%) contrast(120%)" : "none" }}/>
                         <p className="branco">{contadorLike}</p>
                     </div>
                     <div className="dislike-avaliacao" onClick={cliqueBotaoDislike}>
-                        <img src={dislike} alt="Dislike Icon" />
+                        <img 
+                            src={dislike} 
+                            alt="Dislike Icon" 
+                            style={{ filter: disliked ? "invert(28%) sepia(100%) saturate(7483%) hue-rotate(328deg) brightness(96%) contrast(120%)" : "none" }}/>
                         <p className="branco">{contadorDislike}</p>
                     </div>
                 </div>
