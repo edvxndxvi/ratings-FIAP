@@ -5,6 +5,7 @@ import like from "../../assets/svg/like.svg";
 import dislike from "../../assets/svg/dislike.svg";
 import opcoes from "../../assets/svg/3-pontinhos.svg";
 import setaBaixo from "../../assets/svg/seta-baixo.svg";
+import { useState } from "react";
 
 function PostAvaliacao(props: {
     notaUser: number;
@@ -16,6 +17,38 @@ function PostAvaliacao(props: {
     like: number;
     dislike: number;
 }){
+
+    const [contadorLike, setContadorLike] = useState(props.like);
+    const [contadorDislike, setContadorDislike] = useState(props.dislike);
+    const [curtido, setCurtido] = useState(false);
+    const [disliked, setDisliked] = useState(false);
+
+    const cliqueBotaoLike = () => {
+        if (curtido) {
+            setContadorLike(contadorLike - 1);
+        } else {
+            setContadorLike(contadorLike + 1);
+            if (disliked) {
+                setContadorDislike(contadorDislike - 1);
+                setDisliked(false);
+            }
+        }
+        setCurtido(!curtido);
+    };
+
+    const cliqueBotaoDislike = () => {
+        if (disliked) {
+            setContadorDislike(contadorDislike - 1);
+        } else {
+            setContadorDislike(contadorDislike + 1);
+            if (curtido) {
+                setContadorLike(contadorLike - 1);
+                setCurtido(false);
+            }
+        }
+        setDisliked(!disliked);
+    };
+
     return(
         <div className="avaliacao">
             <div className="header-avaliacao">
@@ -44,13 +77,13 @@ function PostAvaliacao(props: {
             </div>
             <div className="interacao-avaliacao">
                 <div className="reacao-avaliacao">
-                    <div className="like-avaliacao">
+                    <div className="like-avaliacao" onClick={cliqueBotaoLike}>
                         <img src={like} alt="Like Icon" />
-                        <p className="branco">{props.like}</p>
+                        <p className="branco">{contadorLike}</p>
                     </div>
-                    <div className="dislike-avaliacao">
+                    <div className="dislike-avaliacao" onClick={cliqueBotaoDislike}>
                         <img src={dislike} alt="Dislike Icon" />
-                        <p className="branco">{props.dislike}</p>
+                        <p className="branco">{contadorDislike}</p>
                     </div>
                 </div>
                 <a href="#">
