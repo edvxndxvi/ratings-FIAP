@@ -60,7 +60,7 @@ function PostAvaliacao(props: {
                     </div>
                 </div>
                 <div className="dado-post-avaliacao">
-                    <a href="#" className="rosa">{props.user}</a>
+                    <a href="#!" className="rosa">{props.user}</a>
                     <p className="cinza">{props.data}</p>
                 </div>
             </div>
@@ -92,8 +92,8 @@ function PostAvaliacao(props: {
                         <p className="branco">{contadorDislike}</p>
                     </div>
                 </div>
-                <a href="#">
-                    <img src={opcoes} alt="Opções Icon" />
+                <a href="#!">
+                    <img src={opcoes} alt="Opções Icon" className="opcoes-avaliacao"/>
                 </a>
             </div>
           </div>

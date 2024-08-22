@@ -84,6 +84,13 @@
     align-items: center;
     gap: 12px;
 }
+.opcoes-avaliacao{
+    transition: .3s;
+}
+.opcoes-avaliacao:hover{
+    filter: invert(30%) sepia(10%) saturate(20%) hue-rotate(0deg) brightness(85%) contrast(90%);
+}
+
 @media (max-width: 550px){
     .dado-post-avaliacao{
         padding-inline: 0px;
