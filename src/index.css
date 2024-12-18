@@ -35,7 +35,9 @@ html{
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  background-color: var(--azul-escuro);
+}
 /* CRIANDO CLASSES DE CORES */
 .branco{
   color: var(--branco);

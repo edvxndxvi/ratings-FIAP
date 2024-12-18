@@ -1,4 +1,4 @@
-import "./index.css"
+import "./index.scss"
 import logoFooter from "../../assets/svg/ratings-logo-footer.svg"
 
 function Footer(){

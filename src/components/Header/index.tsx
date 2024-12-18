@@ -1,4 +1,4 @@
-import "./index.css"
+import "./index.scss"
 import logo from "../../assets/svg/ratings-logo.svg"
 import search_icon from "../../assets/svg/search-icon.svg"
 import { Link } from "react-router-dom";
