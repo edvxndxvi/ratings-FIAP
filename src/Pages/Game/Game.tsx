@@ -1,15 +1,15 @@
-import './App.css'
-import Header from '../../Componentes/Header'
-import Main from '../../Componentes/Main'
-import Dropdown from '../../Componentes/Dropdwon'
+import './game.css'
+import Header from '../../components/Header'
+import Main from '../../components/MainGame'
+import Dropdown from '../../components/Dropdwon'
 import mais from "../../assets/svg/mais.svg"
-import PostAvaliacao from '../../Componentes/PostAvaliacao/index';
-import Footer from '../../Componentes/Footer';
+import PostAvaliacao from '../../components/PostAvaliacao/index';
+import Footer from '../../components/Footer';
 import capa from '../../assets/images/capa-gow.png';
 import gameplay from '../../assets/images/gameplay-gow.png';
 import fundo from '../../assets/images/main-background.png';
 
-function App() {
+function Game() {
   return (
     <>
       <Header/>
@@ -66,4 +66,4 @@ function App() {
   )
 }
 
-export default App
+export default Game

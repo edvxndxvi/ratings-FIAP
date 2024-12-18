@@ -10,7 +10,7 @@ function Main(props:{
     imagemFundo: string
 }){
     return(
-        <main style={{
+        <section style={{
             background: `linear-gradient(rgba(14, 16, 21, 0.90), rgba(14, 16, 21, 0.90)), url(${props.imagemFundo}) center center / cover no-repeat`,
             }}>
             <div className="conteudo-main">
@@ -42,7 +42,7 @@ function Main(props:{
                    </div>
                 </div>
             </div>
-        </main>
+        </section>
     )
 }
 
