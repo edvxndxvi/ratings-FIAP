@@ -1,6 +1,6 @@
 import "./index.scss"
-import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import estrela_contornada from "../../assets/svg/estrela-contornada.svg"
+import StarRating from "../StarRating";
 
 function Main(props:{
     titulo: string,
@@ -19,10 +19,7 @@ function Main(props:{
                     <div className="notas">
                         <div className="avaliacao">
                             <h2 className="branco">AVALIAÇÃO DA RATINGS</h2>
-                            <div className="nota-avaliacao">
-                                <img src={estrela_preenchida} alt="Estrela Preenchida Icon" />
-                                <p className="branco">{props.nota}<span className="cinza">/10</span></p>
-                            </div>
+                            <StarRating rating={props.nota} />
                         </div>
                         <div className="avaliacao">
                             <h2 className="branco">SUA AVALIAÇÃO</h2>

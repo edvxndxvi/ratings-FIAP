@@ -1,0 +1,9 @@
+.star-rating{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    span{
+        display: inline-block;
+    }
+}

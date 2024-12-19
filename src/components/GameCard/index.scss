@@ -1,0 +1,22 @@
+.game-card{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;  cursor: pointer;
+
+    .game-poster img{
+        width: 100%;
+        height: 370px;
+        object-fit: cover;
+        transition: .6s;
+    }
+    .game-infos p{
+        margin-block: 12px;
+    }
+
+    &:hover{
+        cursor: pointer;
+        .game-poster img{
+            filter: brightness(50%);
+        }
+    }
+}
