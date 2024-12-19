@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
 import "./index.scss";
+import { useEffect, useState } from "react";
 import axios from "axios";
+import ReactLoading from 'react-loading';
+
 import GameCard from "../GameCard";
 import { Game } from "../../types/game";
-import ReactLoading from 'react-loading';
 
 
 function GameList(){

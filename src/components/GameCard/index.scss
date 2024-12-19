@@ -8,15 +8,15 @@
         height: 370px;
         object-fit: cover;
         transition: .6s;
+
+        &:hover{
+            cursor: pointer;
+            .game-poster img{
+                filter: brightness(50%);
+            }
+        }
     }
     .game-infos p{
-        margin-block: 12px;
-    }
-
-    &:hover{
-        cursor: pointer;
-        .game-poster img{
-            filter: brightness(50%);
-        }
+        margin-block: 8px;
     }
 }
