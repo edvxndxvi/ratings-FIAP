@@ -1,7 +1,6 @@
 import './game.scss'
 import { useParams } from 'react-router-dom';
 import ReactLoading from 'react-loading';
-
 import Header from '../../components/Header'
 import GameDetail from '../../components/GameDetail'
 import seta from "../../assets/svg/seta.svg"

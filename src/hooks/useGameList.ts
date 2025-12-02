@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Game } from "../types/game";
+import { Game } from "../types";
 import { fetchGames } from "../api/rawg";
 
 export function useGameList() {

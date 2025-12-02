@@ -1,5 +1,5 @@
 import "./index.scss";
-import { Game } from "../../types/game";
+import { Game } from "../../types";
 import StarRating from "../StarRating";
 import { Link } from "react-router-dom";
 
