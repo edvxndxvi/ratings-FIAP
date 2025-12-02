@@ -6,7 +6,7 @@ function GameDetail(props:{
     name: string,
     rate: number,
     poster: string,
-    additionalPoster: string,
+    gameplay: string,
     background: string
 }){
     return(
@@ -35,7 +35,7 @@ function GameDetail(props:{
                         <img src={props.poster} alt={`Capa ${props.name}`} />
                     </div>
                    <div className="gameplay">
-                        <img src={props.additionalPoster} alt={`Gameplay ${props.name}`} />
+                        <img src={props.gameplay} alt={`Gameplay ${props.name}`} />
                    </div>
                 </div>
             </div>

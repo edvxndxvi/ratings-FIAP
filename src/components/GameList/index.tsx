@@ -1,45 +1,28 @@
 import "./index.scss";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import ReactLoading from 'react-loading';
-
 import GameCard from "../GameCard";
-import { Game } from "../../types/game";
+import { useGameList } from "../../hooks/useGameList";
 
 
 function GameList(){
-    const [games, setGames] = useState<Game[]>([]);
-    const API_KEY = import.meta.env.VITE_API_KEY;;
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const { games, isLoading, error } = useGameList();
 
-    useEffect(() => {
-        const getGames = async () => {
-            await axios({
-                method: "GET",
-                url: "https://api.rawg.io/api/games",
-                params: {
-                    key: API_KEY,
-                    ordering: "+rating",
-                    page_size: 15,
-                },
-            }).then((response) => {
-                setGames(response.data.results);
-            });
-
-            setIsLoading(false);
-        };
-
-        getGames();
-    }, [API_KEY]);
-    
     if(isLoading){
         return(
-            <div className="loading-container">
-                 <ReactLoading type={"spin"} color="#D5224E" height={50} width={50} />
+            <div className="state-container">
+                <ReactLoading type={"spin"} color="#D5224E" height={50} width={50} />
             </div>
         )
     }
 
+    if(error){
+        return(
+            <div className="state-container">
+                <h2>Ops! Algo deu errado.</h2>
+                <p>{error}</p>
+            </div>
+        )
+    }
 
     return(
         <ul className="game-list">
