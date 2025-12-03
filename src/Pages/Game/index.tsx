@@ -1,39 +1,34 @@
-import './game.scss'
-import { useParams } from 'react-router-dom';
-import ReactLoading from 'react-loading';
-import Header from '../../components/Header'
-import GameDetail from '../../components/GameDetail'
-import seta from "../../assets/svg/seta.svg"
-import Footer from '../../components/Footer';
-import { useGameDetail } from '../../hooks/useGameDetail';
-import { removeEspanol } from '../../utils/removeEspanolDesc';
+import "./index.scss";
+import { useParams } from "react-router-dom";
+import ReactLoading from "react-loading";
+import GameDetail from "../../components/GameDetail";
+import seta from "../../assets/svg/seta.svg";
+import { useGameDetail } from "../../hooks/useGameDetail";
+import { removeEspanol } from "../../utils/removeEspanolDesc";
 
 function Game() {
   const { id } = useParams();
-  const { game, isLoading, error} = useGameDetail(id || "");
-  
-  if(isLoading){
-    return(
+  const { game, isLoading, error } = useGameDetail(id || "");
+
+  if (isLoading) {
+    return (
       <div className="state-container">
         <ReactLoading type={"spin"} color="#D5224E" height={50} width={50} />
       </div>
-    )
+    );
   }
 
-  if(error){
-    return(
+  if (error) {
+    return (
       <div className="state-container">
         <h2>Ops! Algo deu errado.</h2>
         <p>{error}</p>
       </div>
-    )
+    );
   }
 
   return (
-    <>
-      <Header/>
-      <main>
-
+    <main>
       {game && (
         <>
           <GameDetail
@@ -49,15 +44,15 @@ function Game() {
               <img src={seta} alt="Seta Icon" />
               <h3 className="branco">DESCRIÇÃO</h3>
             </div>
-            <p className='branco'>{removeEspanol(game.description_raw) || "Descrição indisponível"}</p>
+            <p className="branco">
+              {removeEspanol(game.description_raw) ||
+                "Descrição indisponível"}
+            </p>
           </section>
         </>
       )}
-
-      </main>
-      <Footer/>
-    </>
-  )
+    </main>
+  );
 }
 
-export default Game
+export default Game;
