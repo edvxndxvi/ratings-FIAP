@@ -1,5 +1,10 @@
+import SearchProvider from "./context/searchContext"
 import { AppRoutes } from "./routes"
 
 export function App(){
-    return <AppRoutes/>
+    return(
+        <SearchProvider>
+            <AppRoutes/>
+        </SearchProvider>
+    )
 }

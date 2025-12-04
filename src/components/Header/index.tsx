@@ -12,7 +12,7 @@ function Header(){
                         <img src={logo} alt="Logo Ratings" />
                     </Link>
                 </div>
-                <SearchInput onSearchChange={(query) => console.log(query)}/>
+                <SearchInput/>
                 <button>LOGIN</button>
             </nav>
         </header>
