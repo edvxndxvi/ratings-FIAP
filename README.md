@@ -1,50 +1,78 @@
-# React + TypeScript + Vite
+# Ratings 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ratings é um projeto de estudo de um site de avaliação de jogos. Inicialmente criado para uma avaliação da matérida de Front-End do 1º Semestre do curso de ADS da FIAP, hoje, sendo revisitado para aprimorar e reforçar conceitos do desenvolvimento com React.
 
-Currently, two official plugins are available:
+## 💻 Tecnologias e Arquitetura
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Framework**:	React 18
+- **Linguagem**:	TypeScript
+- **Bundler**: Vite
+- **Estilização**: SCSS por Componente
+- **API Externa**; RAWG Video Games Database API (https://rawg.io/apidocs)
 
-## Expanding the ESLint configuration
+## 🕹️ Recursos e Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Lista de Jogos (Home)
+- Busca de Jogos: Campo de input que aciona uma requisição à API em tempo real para filtrar jogos.
+- Detalhes do Jogo: Tela exclusiva que carrega todas as informações adicionais de um jogo específico, usando seu ID.
+- Avaliação por Estrelas:
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Como Executar o Projeto Localmente
+Siga estas instruções para ter uma cópia local do projeto em execução:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Pré-requisitos
+- Node.js e npm (ou Yarn/pnpm).
+- Uma chave de acesso pessoal à RAWG API.
+
+### 🔑 Configuração da API Key
+1. Crie um arquivo de ambiente na raiz do projeto chamado `.env`.
+
+2. Obtenha sua chave de API no site da RAWG.
+
+3. Adicione a chave ao arquivo, utilizando o prefixo exigido pelo Vite:
+
+```.env
+VITE_RAWG_API_KEY=sua-chave-aqui
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Instalação
+1. Clone o Repositório
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+2. Instale as Dependências:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```Bash
+npm install
+# ou yarn install
 ```
+
+3. Inicie o Servidor de Desenvolvimento:
+
+```Bash
+npm run dev
+# ou yarn dev
+```
+
+## 🧠 Meu Diário de Aprendizado e Desafios (Changelog Técnico)
+Esta seção é o registro da minha evolução técnica com este projeto, documentando os conhecimentos adquiridos e os desafios técnicos superados a cada nova feature.
+
+- `43/12/2025`:
+  - **O que foi feito**:
+      - Criei um `SearchContext` para gerenciar o estado global e envolvi a aplicação com o `SearchProvider`
+      - Criei uma função para salvar o valor do input a cada mudança (`handleChange()`)
+      - Passei o valor do input ao `fetchGames()` e garantindo que caso não houvesse nada digitado não seria usado o parâmetro de search
+
+- `03/12/2025`:
+  - **O que foi feito**:
+    - Ajuste na função removeEspanolDesc para retornar descrição normalmente caso não possua versão espanhol
+    - Criação de um Layout para manter a estrutura global das páginas (Header e Footer)
+    - Implementando layout no arquivo `routes.ts`
+    - Movi a searchBar para dentro de um componente para separar suas responsabilidades do header
+    - Ajustei a `fetchGames()` para receber o parâmetro de busca digitado no input
+  - **Desafios encontrados**:
+    -  Tive dificuldades em como passaria as informações do input para a GameList, tendo em visto que esse processo causaria problemas de comunicação entre componentes distantes (prop-drilling).
+
+- `02/12/2025`: 
+  - **O que foi feito**:
+    - Separei as responsabilidades da API: métodos de `fetchGamesById(id)` e `fetchGames()` (pasta api), melhorando o tratamento de erros nas funções com try e catch
+    - Criação de Hooks que utilizam os métodos da API e podem ser consumidos por componentes: useGameDetails(id) e useGameList (pasta hooks) inclui estado de erro e tratei na UI
+    - Criação de função para remover a descrição em espanhol, deixando apenas em inglês (pasta utils)
