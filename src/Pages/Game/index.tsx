@@ -32,6 +32,8 @@ function Game() {
       {game && (
         <>
           <GameDetail
+            key={game.id} 
+            id={game.id}
             name={game.name}
             rate={game.rating}
             poster={game.background_image}

@@ -55,21 +55,30 @@ npm run dev
 ## 🧠 Meu Diário de Aprendizado e Desafios (Changelog Técnico)
 Esta seção é o registro da minha evolução técnica com este projeto, documentando os conhecimentos adquiridos e os desafios técnicos superados a cada nova feature.
 
-- `43/12/2025`:
+- `08/12/2025`:
+   - **O que foi feito**:
+    - FavoriteContext e função de toggleFavorite
+    - Ajuste da UI para reagir conforme estado de favorito ou não
+
+- `05/12/2025`:
+  - **O que foi feito**:
+    - Adicionando função de navageção ao clicar ENTER na busca
+
+- `04/12/2025`:
   - **O que foi feito**:
       - Criei um `SearchContext` para gerenciar o estado global e envolvi a aplicação com o `SearchProvider`
       - Criei uma função para salvar o valor do input a cada mudança (`handleChange()`)
       - Passei o valor do input ao `fetchGames()` e garantindo que caso não houvesse nada digitado não seria usado o parâmetro de search
 
 - `03/12/2025`:
+  - **Desafios encontrados**:
+    -  Tive dificuldades em como passaria as informações do input para a GameList, tendo em visto que esse processo causaria problemas de comunicação entre componentes distantes (prop-drilling), resolvi com a criação de contexto.
   - **O que foi feito**:
     - Ajuste na função removeEspanolDesc para retornar descrição normalmente caso não possua versão espanhol
     - Criação de um Layout para manter a estrutura global das páginas (Header e Footer)
     - Implementando layout no arquivo `routes.ts`
     - Movi a searchBar para dentro de um componente para separar suas responsabilidades do header
     - Ajustei a `fetchGames()` para receber o parâmetro de busca digitado no input
-  - **Desafios encontrados**:
-    -  Tive dificuldades em como passaria as informações do input para a GameList, tendo em visto que esse processo causaria problemas de comunicação entre componentes distantes (prop-drilling).
 
 - `02/12/2025`: 
   - **O que foi feito**:

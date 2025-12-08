@@ -1,14 +1,21 @@
 import "./index.scss"
 import estrela_contornada from "../../assets/svg/estrela-contornada.svg"
+import estrela_preenchida from "../../assets/svg/estrela-preenchida.svg"
 import StarRating from "../StarRating";
+import { useFavorite } from "../../context/favoriteContext";
 
 function GameDetail(props:{
+    id: number,
     name: string,
     rate: number,
     poster: string,
     gameplay: string,
     background: string
 }){
+    const { favorites, toggleFavorite } = useFavorite();
+
+    const isFavorite = favorites.includes(props.id);
+
     return(
         <section className="mainGame" style={{
             background: `linear-gradient(rgba(14, 16, 21, 0.90), rgba(14, 16, 21, 0.90)), url(${props.background}) center center / cover no-repeat`,
@@ -22,10 +29,10 @@ function GameDetail(props:{
                             <StarRating rating={props.rate} />
                         </div>
                         <div className="avaliacao">
-                            <h2 className="branco">SUA AVALIAÇÃO</h2>
-                            <div className="avaliar-button">
-                                <img src={estrela_contornada} alt="Estrela Contornada Icon" />
-                                <p className="branco">Avaliar</p>
+                            <h2 className="branco">ADICIONAR À LISTA</h2>
+                            <div className="avaliar-button" onClick={() => toggleFavorite(props.id)}>
+                                <img src={isFavorite ? estrela_preenchida : estrela_contornada} alt="Estrela Contornada Icon" />
+                                <p className="branco">{isFavorite ? "Desfavoritar" : "Favoritar"}</p>
                             </div>
                         </div>
                     </div>
