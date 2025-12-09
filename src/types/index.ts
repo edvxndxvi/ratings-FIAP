@@ -7,9 +7,15 @@ export interface GameDetails{
     description_raw: string,
 }
 
+interface RawTag{
+    id: number,
+    name: string;
+}
+
 export interface Game{
     id: number;
     background_image: string;
     name: string;
     rating: number;
+    tags: RawTag[];
 }

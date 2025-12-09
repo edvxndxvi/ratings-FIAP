@@ -15,7 +15,7 @@ export async function fetchGames(searchQuery: string): Promise<Game[]> {
             ...(searchQuery && { search: searchQuery })
         }
     });
-
+console.log(response.data.results)
     return response.data.results;
 }
 

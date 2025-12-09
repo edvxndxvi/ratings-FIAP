@@ -32,7 +32,7 @@ function Game() {
       {game && (
         <>
           <GameDetail
-            key={game.id} 
+            key={game.id}
             id={game.id}
             name={game.name}
             rate={game.rating}
@@ -47,8 +47,7 @@ function Game() {
               <h3 className="branco">DESCRIÇÃO</h3>
             </div>
             <p className="branco">
-              {removeEspanol(game.description_raw) ||
-                "Descrição indisponível"}
+              {removeEspanol(game.description_raw) || "Descrição indisponível"}
             </p>
           </section>
         </>

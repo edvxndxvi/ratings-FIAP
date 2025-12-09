@@ -6,3 +6,4 @@ export function removeEspanol(description: string){
   const gameDescriptionWithoutEspanol = description.slice(0, espanolIndex);
   return gameDescriptionWithoutEspanol
 }
+
