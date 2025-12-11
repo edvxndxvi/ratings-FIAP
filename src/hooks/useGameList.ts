@@ -3,12 +3,14 @@ import { Game } from "../types";
 import { fetchGames } from "../api/rawg";
 import { useSearch } from "../context/searchContext";
 import { filterInappropriete } from "../utils/filterInappropriate";
+import { useInfiniteScroll } from "./useInfiniteScroll";
 
 export function useGameList() {
     const [games, setGames] = useState<Game[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const { searchQuery } = useSearch();
+    const { currentPage, observerTarget }= useInfiniteScroll()
 
     useEffect(() => {
         const getGames = async () => {
@@ -16,9 +18,17 @@ export function useGameList() {
             setError(null);
 
             try {
-                const rawGames = await fetchGames(searchQuery);
+                const rawGames = await fetchGames(searchQuery, currentPage);
                 const cleanGames = filterInappropriete(rawGames)
-                setGames(cleanGames)
+                setGames((prevGames => { 
+                    if(currentPage === 1){
+                        return cleanGames
+                    }
+                    const uniqueNewGames = cleanGames.filter(
+                        newGame => !prevGames.some(existingGame => existingGame.id === newGame.id)
+                    );
+                    return [...prevGames, ...uniqueNewGames]
+                }))
             } catch (error) {
                 console.error("Erro ao buscar jogos: " + error)
                 setError("Ocorreu um erro ao carregar a lista de jogos.")
@@ -29,7 +39,7 @@ export function useGameList() {
         }
 
         getGames()
-    }, [searchQuery])
+    }, [searchQuery, currentPage])
 
-    return { games, isLoading, error };
+    return { games, isLoading, error, observerTarget };
 }

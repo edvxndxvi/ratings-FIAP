@@ -5,7 +5,7 @@ import { useGameList } from "../../hooks/useGameList";
 
 
 function GameList(){
-    const { games, isLoading, error } = useGameList();
+    const { games, isLoading, error, observerTarget } = useGameList();
 
     if(isLoading){
         return(
@@ -25,14 +25,19 @@ function GameList(){
     }
 
     return(
-        <ul className="game-list">
-            {games.map((game) => 
-                <GameCard
-                    key={game.id}
-                    game={game}
-                />
-            )}
-        </ul>
+        <>
+            <ul className="game-list">
+                {games.map((game) => 
+                    <GameCard
+                        key={game.id}
+                        game={game}
+                    />
+                )}
+            </ul>
+            <div ref={observerTarget} id="sentinela">
+                <ReactLoading type="spin" color="#D5224E" height={50} width={50} />
+            </div>
+        </>
     )
 }
 
