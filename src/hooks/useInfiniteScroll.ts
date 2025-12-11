@@ -1,22 +1,27 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useInfiniteScroll(){
-    const observerTarget = useRef(null);
+    const observerTarget = useRef<HTMLDivElement>(null);
     const [currentPage, setCurrentPage] = useState(1);
-    
+
     useEffect(() => {
         const sentinela = observerTarget.current;
-        if (sentinela) {
         const intersectionObserver = new IntersectionObserver((entries) => {
-            if(entries.some((entry => entry.isIntersecting))){
-                setCurrentPage((currentPageInsideState) => currentPageInsideState + 1)
-                console.log("Observando")
+            if(entries.some((entry) => entry.isIntersecting)){
+                setCurrentPage((prev) => {
+                    return prev + 1;
+                });
             }
-        })
+        });
+    
+        if (sentinela) {
             intersectionObserver.observe(sentinela);
-            return () => intersectionObserver.disconnect();
         }
-    }, [observerTarget, setCurrentPage])
+        
+        return () => {
+            if(sentinela) intersectionObserver.disconnect();
+        };
+    }, [observerTarget.current]);
 
-    return { currentPage, observerTarget }
+    return { currentPage, observerTarget, setCurrentPage };
 }

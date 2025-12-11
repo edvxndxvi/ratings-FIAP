@@ -11,12 +11,12 @@ export async function fetchGames(searchQuery: string, currentPage: number): Prom
         params: {
             key: API_KEY,
             ordering: '+rating',
-            page: {currentPage},
+            page: currentPage,
             page_size: 40,
             ...(searchQuery && { search: searchQuery })
         }
     });
-console.log(response.data.results)
+    console.log(response.data.results)
     return response.data.results;
 }
 

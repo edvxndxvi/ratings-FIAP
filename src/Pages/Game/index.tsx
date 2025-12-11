@@ -5,6 +5,7 @@ import GameDetail from "../../components/GameDetail";
 import seta from "../../assets/svg/seta.svg";
 import { useGameDetail } from "../../hooks/useGameDetail";
 import { removeEspanol } from "../../utils/removeEspanolDesc";
+import Footer from "../../components/Footer";
 
 function Game() {
   const { id } = useParams();
@@ -28,31 +29,35 @@ function Game() {
   }
 
   return (
-    <main>
-      {game && (
-        <>
-          <GameDetail
-            key={game.id}
-            id={game.id}
-            name={game.name}
-            rate={game.rating}
-            poster={game.background_image}
-            gameplay={game.background_image_additional}
-            background={game.background_image}
-          />
+    <>
+      <main>
+        {game && (
+          <>
+            <GameDetail
+              key={game.id}
+              id={game.id}
+              name={game.name}
+              rate={game.rating}
+              poster={game.background_image}
+              gameplay={game.background_image_additional}
+              background={game.background_image}
+            />
 
-          <section className="descricao">
-            <div className="dropdown">
-              <img src={seta} alt="Seta Icon" />
-              <h3 className="branco">DESCRIÇÃO</h3>
-            </div>
-            <p className="branco">
-              {removeEspanol(game.description_raw) || "Descrição indisponível"}
-            </p>
-          </section>
-        </>
-      )}
-    </main>
+            <section className="descricao">
+              <div className="dropdown">
+                <img src={seta} alt="Seta Icon" />
+                <h3 className="branco">DESCRIÇÃO</h3>
+              </div>
+              <p className="branco">
+                {removeEspanol(game.description_raw) || "Descrição indisponível"}
+              </p>
+            </section>
+          </>
+        )}
+      </main>
+      <Footer/>
+    </>
+
   );
 }
 

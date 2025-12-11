@@ -3,17 +3,9 @@ import ReactLoading from 'react-loading';
 import GameCard from "../GameCard";
 import { useGameList } from "../../hooks/useGameList";
 
-
 function GameList(){
     const { games, isLoading, error, observerTarget } = useGameList();
 
-    if(isLoading){
-        return(
-            <div className="state-container">
-                <ReactLoading type={"spin"} color="#D5224E" height={50} width={50} />
-            </div>
-        )
-    }
 
     if(error){
         return(
@@ -24,19 +16,33 @@ function GameList(){
         )
     }
 
-    return(
+   return(
         <>
-            <ul className="game-list">
-                {games.map((game) => 
-                    <GameCard
-                        key={game.id}
-                        game={game}
-                    />
-                )}
-            </ul>
-            <div ref={observerTarget} id="sentinela">
-                <ReactLoading type="spin" color="#D5224E" height={50} width={50} />
-            </div>
+            {isLoading && games.length === 0 && (
+                <div className="state-container">
+                    <ReactLoading type="spin" color="#D5224E" height={50} width={50} />
+                </div>
+            )}
+            {games.length > 0 && (
+                <>
+                    <ul className="game-list">
+                        {games.map((game) => 
+                            <GameCard
+                                key={game.id}
+                                game={game}
+                            />
+                        )}
+                    </ul>
+                    
+                    <div ref={observerTarget} id="sentinela">
+                        {isLoading ? (
+                            <ReactLoading type="spin" color="#D5224E" height={50} width={50} />
+                        ) : (
+                            <div style={{ height: '20px' }} /> 
+                        )}
+                    </div>
+                </>
+            )}
         </>
     )
 }
