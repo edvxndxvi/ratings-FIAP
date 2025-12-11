@@ -21,7 +21,7 @@ export function useInfiniteScroll(){
         return () => {
             if(sentinela) intersectionObserver.disconnect();
         };
-    }, [observerTarget.current]);
+    }, [observerTarget.current, setCurrentPage]);
 
     return { currentPage, observerTarget, setCurrentPage };
 }

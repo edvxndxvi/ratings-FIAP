@@ -10,7 +10,12 @@ export function useGameList() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
     const { searchQuery } = useSearch();
-    const { currentPage, observerTarget } = useInfiniteScroll()
+    const { currentPage, observerTarget, setCurrentPage } = useInfiniteScroll()
+
+    useEffect(() => {
+        setCurrentPage(1)
+        setGames([])
+    }, [searchQuery, setCurrentPage])
 
     useEffect(() => {
         const getGames = async () => {
