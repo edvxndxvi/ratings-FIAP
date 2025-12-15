@@ -4,6 +4,7 @@ import { fetchGames } from "../api/rawg";
 import { useSearch } from "../context/searchContext";
 import { filterInappropriete } from "../utils/filterInappropriate";
 import { useInfiniteScroll } from "./useInfiniteScroll";
+import { useDebounce } from "./useDebounce";
 
 export function useGameList() {
     const [games, setGames] = useState<Game[]>([]);
@@ -11,6 +12,8 @@ export function useGameList() {
     const [error, setError] = useState<string | null>(null);
     const { searchQuery } = useSearch();
     const { currentPage, observerTarget, setCurrentPage } = useInfiniteScroll()
+
+    const debouncedQuery = useDebounce(searchQuery, 500)
 
     useEffect(() => {
         setCurrentPage(1)
@@ -23,7 +26,7 @@ export function useGameList() {
             setError(null);
 
             try {
-                const rawGames = await fetchGames(searchQuery, currentPage);
+                const rawGames = await fetchGames(debouncedQuery, currentPage);
                 const cleanGames = filterInappropriete(rawGames)
                 setGames((prevGames) => { 
                     if(currentPage === 1 && prevGames.length === 0){
@@ -45,7 +48,7 @@ export function useGameList() {
         }
 
         getGames()
-    }, [searchQuery, currentPage])
+    }, [debouncedQuery, currentPage])
 
     return { games, isLoading, error, observerTarget };
 }
