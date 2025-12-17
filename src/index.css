@@ -37,6 +37,7 @@ html{
 }
 body {
   background-color: var(--azul-escuro);
+  overflow-x: hidden;
 }
 /* CRIANDO CLASSES DE CORES */
 .branco{
@@ -68,4 +69,9 @@ body {
   justify-content: center;
   min-height: calc(100vh - 136px);
   color: white;
+}
+
+.container{
+  max-width: 1440px;
+  margin: auto;
 }

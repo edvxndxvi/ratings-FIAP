@@ -10,7 +10,7 @@ export const AppRoutes = () => {
                 <Route path="/" element={ <Layout/> }>
                     <Route index element={<Home/>}/>
                     <Route path="/game/:id" element={<Game/>}/>
-                    <Route path="*" element={<Navigate to="/home"/>}/>
+                    <Route path="*" element={<Navigate to="/"/>}/>
                 </Route>
             </Routes> 
         </BrowserRouter>

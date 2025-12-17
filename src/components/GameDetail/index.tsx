@@ -18,9 +18,9 @@ function GameDetail(props:{
 
     return(
         <section className="mainGame" style={{
-            background: `linear-gradient(rgba(14, 16, 21, 0.90), rgba(14, 16, 21, 0.90)), url(${props.background}) center center / cover no-repeat`,
+            background: `linear-gradient(rgba(14, 16, 21, 0.95), rgba(14, 16, 21, 0.95)), url(${props.background}) center center / cover no-repeat`,
             }}>
-            <div className="conteudo-game">
+            <div className="conteudo-game container">
                 <div className="header-game">
                     <h1 className="branco">{props.name}</h1>
                     <div className="notas">

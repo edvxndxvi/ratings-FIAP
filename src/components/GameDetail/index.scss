@@ -1,5 +1,8 @@
 .mainGame{
-    width: 100%; 
+    width: 100vw; 
+    position: relative;
+     left: 50%;
+     transform: translateX(-50%);
     
     .conteudo-game{
         padding: 32px 3%;
