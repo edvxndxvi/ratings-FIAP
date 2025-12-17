@@ -1,18 +1,35 @@
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 32px 3%;
     gap: 20px;
     max-width: 100%;
     width: 100%;
+
+    .link{
+        color: var(--branco);
+        text-decoration: none;
+        transition: .3s;
+
+        &:hover{
+            color: var(--vermelho);
+        }
+    }
+
+    .conteudo-header{
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        width: 100%;
+    }
 
     button{
         font-family: "Krona One", sans-serif;
         color: var(--branco);
         background-color: var(--rosa);
         border: none;
-        padding: 16px 64px;
+        padding: 8px 16px;
         border-radius: 8px;
         cursor: pointer;
         transition: .3s;
@@ -26,6 +43,9 @@ nav{
 @media (max-width: 850px){
     nav{
         button{
+            display: none;
+        }
+        .link{
             display: none;
         }
     }

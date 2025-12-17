@@ -7,12 +7,13 @@ function Header(){
     return(
         <header>
             <nav>
-                <div className="logo">
+                <div className="conteudo-header">
                     <Link to="/">
-                        <img src={logo} alt="Logo Ratings" />
+                        <img src={logo} alt="Logo Ratings" width={120}/>
                     </Link>
+                    <SearchInput/>
+                    <Link to="/favorites" className="link">Favoritos</Link>
                 </div>
-                <SearchInput/>
                 <button>LOGIN</button>
             </nav>
         </header>

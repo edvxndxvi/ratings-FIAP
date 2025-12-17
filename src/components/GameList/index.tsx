@@ -4,7 +4,7 @@ import GameCard from "../GameCard";
 import { useGameList } from "../../hooks/useGameList";
 
 function GameList(){
-    const { games, isLoading, error, observerTarget } = useGameList();
+    const { games, isLoading, error, observerTarget, notFound } = useGameList();
 
 
     if(error){
@@ -23,6 +23,13 @@ function GameList(){
                     <ReactLoading type="spin" color="#D5224E" height={50} width={50} />
                 </div>
             )}
+            
+            {notFound && (
+                <div className="state-container">
+                    <h2>Ops! Nenhum jogo encontrado.</h2>
+                </div>
+            )}
+
             {games.length > 0 && (
                 <>
                     <ul className="game-list">

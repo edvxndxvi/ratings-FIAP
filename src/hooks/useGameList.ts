@@ -10,6 +10,7 @@ export function useGameList() {
     const [games, setGames] = useState<Game[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+    const [notFound, setNotFound] = useState<boolean>(false);
     const { searchQuery } = useSearch();
     const { currentPage, observerTarget, setCurrentPage } = useInfiniteScroll()
 
@@ -24,10 +25,16 @@ export function useGameList() {
         const getGames = async () => {
             setIsLoading(true)
             setError(null);
+            setNotFound(false) 
 
             try {
                 const rawGames = await fetchGames(debouncedQuery, currentPage);
                 const cleanGames = filterInappropriete(rawGames)
+
+                if (cleanGames.length === 0) {
+                    setNotFound(true);
+                }
+
                 setGames((prevGames) => { 
                     if(currentPage === 1 && prevGames.length === 0){
                         return cleanGames 
@@ -50,5 +57,5 @@ export function useGameList() {
         getGames()
     }, [debouncedQuery, currentPage])
 
-    return { games, isLoading, error, observerTarget };
+    return { games, isLoading, error, observerTarget, notFound };
 }
