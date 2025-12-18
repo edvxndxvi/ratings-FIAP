@@ -34,13 +34,7 @@ function Game() {
         {game && (
           <>
             <GameDetail
-              key={game.id}
-              id={game.id}
-              name={game.name}
-              rate={game.rating}
-              poster={game.background_image}
-              gameplay={game.background_image_additional}
-              background={game.background_image}
+              {...game}
             />
 
             <section className="descricao">

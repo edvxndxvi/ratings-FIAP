@@ -20,7 +20,7 @@ export async function fetchGames(searchQuery: string, currentPage: number): Prom
     return response.data.results;
 }
 
-export async function fetchGamesById(id: string): Promise<GameDetails> {
+export async function fetchGameById(id: string): Promise<GameDetails> {
     const response = await axios({
         method: 'GET',
         url: `${URL}/${id}`,

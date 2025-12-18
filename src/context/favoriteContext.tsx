@@ -1,8 +1,10 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
+import { GameDetails } from "../types";
 
 interface FavoriteContextType{
-    favorites: number[]
-    toggleFavorite: (gameId: number) => void
+    favorites: GameDetails[]
+    toggleFavorite: (game: GameDetails) => void
 }
 const FavoriteContext = createContext<FavoriteContextType | null>(null);
 
@@ -11,15 +13,22 @@ interface FavoriteProviderProps{
 }
 
 export function FavoriteProvider({ children }: FavoriteProviderProps) {
-    const [ favorites, setFavorites] = useState<number[]>([])
+    const [ favorites, setFavorites] = useState<GameDetails[]>([])
+    const {setItem} = useLocalStorage();
 
-    function toggleFavorite(gameId: number){
+    function toggleFavorite(game: GameDetails){
+        let newList: GameDetails[] = [] 
         setFavorites(prevFavorites => {
-            if(prevFavorites.includes(gameId)){
-                return prevFavorites.filter(id => id !== gameId);
+            const isFavorite = prevFavorites.some(fav => fav.id === game.id)
+
+            if(isFavorite){
+                newList = prevFavorites.filter(fav => fav.id !== game.id);
             }else{
-                return [...prevFavorites, gameId]
+                newList = [...prevFavorites, game]
             }
+
+            setItem("favorites", newList)
+            return newList
         })
     }
 

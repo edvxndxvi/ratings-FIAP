@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchGamesById } from "../api/rawg";
+import { fetchGameById } from "../api/rawg";
 import { GameDetails } from "../types";
 
 export function useGameDetail(id: string) {
@@ -15,7 +15,7 @@ export function useGameDetail(id: string) {
             setError(null)
 
             try {
-                const data = await fetchGamesById(id);
+                const data = await fetchGameById(id);
                 setGame(data)
             } catch (error) {
                 console.error("Erro ao buscar detalhes do jogo: " + error);
