@@ -22,6 +22,7 @@ export function useGameList() {
     }, [searchQuery, setCurrentPage])
 
     useEffect(() => {
+
         const getGames = async () => {
             setIsLoading(true)
             setError(null);

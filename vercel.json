@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/games",
-      "destination": "https://api.rawg.io/api/games"
+      "source": "/api/games/:path*",
+      "destination": "https://api.rawg.io/api/games/:path*"
     }
   ]
 }
