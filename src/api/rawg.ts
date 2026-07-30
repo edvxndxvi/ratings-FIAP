@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Game, GameDetails } from '../types';
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-const URL = 'https://api.rawg.io/api/games';
+const URL = '/api/games';
 
 export async function fetchGames(searchQuery: string, currentPage: number): Promise<Game[]> {
     const response = await axios({
