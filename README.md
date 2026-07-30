@@ -32,7 +32,7 @@ Siga estas instruções para ter uma cópia local do projeto em execução:
 3. Adicione a chave ao arquivo, utilizando o prefixo exigido pelo Vite:
 
 ```.env
-VITE_RAWG_API_KEY=sua-chave-aqui
+VITE_API_KEY=sua-chave-aqui
 ```
 
 ### Instalação

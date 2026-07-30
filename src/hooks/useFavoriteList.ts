@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { GameDetails } from "../types";
+import { Game } from "../types";
 import { useLocalStorage } from "./useLocalStorage";
 
 export function useFavoriteList(){
-    const [games, setGames] = useState<GameDetails[]>([])
+    const [games, setGames] = useState<Game[]>([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState<string | null>(null);
     const [isEmpty, setIsEmpty] = useState(false);
@@ -18,7 +18,7 @@ export function useFavoriteList(){
             try{
                 const favoriteGames = getItem("favorites")
 
-                if (favoriteGames.lenght === 0){
+                if (favoriteGames === undefined){
                     setIsEmpty(true)
                 }
 
